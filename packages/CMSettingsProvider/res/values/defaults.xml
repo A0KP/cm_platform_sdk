@@ -93,4 +93,6 @@
     <!-- Default values for protected component managers -->
     <string name="def_protected_component_managers" translatable="false">com.android.settings|com.android.launcher3|com.cyanogenmod.trebuchet</string>
 
+    <!-- Default for CMSettings.STATUS_BAR_BATTERY_STATUS_STYLE -->
+    <integer name="def_battery_style">0</integer>
 </resources>

@@ -278,12 +278,14 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
         loadIntegerSetting(db, CMTableNames.TABLE_SYSTEM, CMSettings.System.ENABLE_PEOPLE_LOOKUP,
                 R.integer.def_people_lookup);
 
-
         loadBooleanSetting(db, CMTableNames.TABLE_SYSTEM, CMSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE,
                 R.bool.def_notification_pulse_custom_enable);
 
         loadBooleanSetting(db, CMTableNames.TABLE_SYSTEM, CMSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION,
                 R.bool.def_swap_volume_keys_on_rotation);
+
+        loadIntegerSetting(db, CMTableNames.TABLE_SYSTEM, CMSettings.System.STATUS_BAR_BATTERY_STATUS_STYLE,
+                R.integer.def_battery_style);
 
         if (mContext.getResources().getBoolean(R.bool.def_notification_pulse_custom_enable)) {
             loadStringSetting(db, CMTableNames.TABLE_SYSTEM, CMSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES,
