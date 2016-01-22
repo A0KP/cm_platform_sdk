@@ -826,18 +826,19 @@ public final class CMSettings {
 
         /**
          * Display style of the status bar battery information
-         * 0: Display the battery an icon in portrait mode
-         * 2: Display the battery as a circle
-         * 4: Hide the battery status information
-         * 5: Display the battery an icon in landscape mode
-         * 6: Display the battery as plain text
+         * Battery status style on the status bar
+         * 0 - Icon portrait
+         * 1 - Icon landscape
+         * 2 - Circle
+         * 3 - Text only
+         * 4 - Hidden
          * default: 0
          */
-        public static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
+        public static final String STATUS_BAR_BATTERY_STATUS_STYLE = "status_bar_battery_status_style";
 
         /** @hide */
-        public static final Validator STATUS_BAR_BATTERY_STYLE_VALIDATOR =
-                new DiscreteValueValidator(new String[] {"0", "2", "3", "4", "5", "6"});
+        public static final Validator STATUS_BAR_BATTERY_STATUS_STYLE_VALIDATOR =
+                new DiscreteValueValidator(new String[] {"0", "1", "2", "3", "4"});
 
         /**
          * Status bar battery %
@@ -851,6 +852,66 @@ public final class CMSettings {
         /** @hide */
         public static final Validator STATUS_BAR_SHOW_BATTERY_PERCENT_VALIDATOR =
                 new InclusiveIntegerRangeValidator(0, 2);
+
+        /**
+         * Battery status (text) style on the status bar
+         * 0 - Inside the icon/circle
+         * 1 - Next to the icon/circle
+         * 2 - Hidden
+         * default: 2
+         * @hide
+         */
+        public static final String STATUS_BAR_BATTERY_STATUS_PERCENT_STYLE = "status_bar_battery_status_percent_style";
+
+        /**
+         * Battery charging animation speed on the status bar
+         * 0 - Disabled
+         * 1 - Slow
+         * 3 - Normal (default)
+         * 5 - fast
+         * default: 3
+         * @hide
+         */
+        public static final String STATUS_BAR_BATTERY_STATUS_CHARGING_ANIMATION_SPEED =
+                "status_bar_battery_status_charging_animation_speed";
+
+        /**
+         * Whether to show the Circle battery status dotted on the status bar
+         * @hide
+         */
+        public static final String STATUS_BAR_BATTERY_STATUS_SHOW_CIRCLE_DOTTED = "status_bar_battery_status_show_circle_dotted";
+
+        /**
+         * Length of the Circle battery status dots on the status bar
+         *
+         * Values 0 - 10
+         * default : 3
+         *
+         * @hide
+         */
+        public static final String STATUS_BAR_BATTERY_STATUS_CIRCLE_DOT_LENGTH = "status_bar_battery_status_circle_dot_length";
+
+        /**
+         * Interval of the Circle battery status dots on the status bar
+         *
+         * Values 0 - 10
+         * default : 2
+         *
+         * @hide
+         */
+        public static final String STATUS_BAR_BATTERY_STATUS_CIRCLE_DOT_INTERVAL = "status_bar_battery_status_circle_dot_interval";
+
+        /**
+         *Battery status fill color
+         * @hide
+         */
+        public static final String STATUS_BAR_BATTERY_STATUS_COLOR = "status_bar_battery_status_color";
+
+        /**
+         * Battery status text color
+         * @hide
+         */
+        public static final String STATUS_BAR_BATTERY_STATUS_TEXT_COLOR = "status_bar_battery_status_text_color";
 
         /**
          * Whether the phone ringtone should be played in an increasing manner
@@ -1812,7 +1873,7 @@ public final class CMSettings {
                 CMSettings.System.INCREASING_RING_RAMP_UP_TIME,
                 CMSettings.System.STATUS_BAR_CLOCK,
                 CMSettings.System.STATUS_BAR_AM_PM,
-                CMSettings.System.STATUS_BAR_BATTERY_STYLE,
+                CMSettings.System.STATUS_BAR_BATTERY_STATUS_STYLE,
                 CMSettings.System.STATUS_BAR_SHOW_BATTERY_PERCENT,
                 CMSettings.System.VOLUME_KEYS_CONTROL_RING_STREAM,
                 CMSettings.System.NAVIGATION_BAR_MENU_ARROW_KEYS,
@@ -1850,7 +1911,7 @@ public final class CMSettings {
             VALIDATORS.put(SYSTEM_PROFILES_ENABLED, SYSTEM_PROFILES_ENABLED_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_CLOCK, STATUS_BAR_CLOCK_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_AM_PM, STATUS_BAR_AM_PM_VALIDATOR);
-            VALIDATORS.put(STATUS_BAR_BATTERY_STYLE, STATUS_BAR_BATTERY_STYLE_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_BATTERY_STATUS_STYLE, STATUS_BAR_BATTERY_STATUS_STYLE_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_SHOW_BATTERY_PERCENT,
                     STATUS_BAR_SHOW_BATTERY_PERCENT_VALIDATOR);
             VALIDATORS.put(INCREASING_RING, INCREASING_RING_VALIDATOR);
